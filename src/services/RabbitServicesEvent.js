@@ -16,7 +16,7 @@ export async function userCreatedEvent(user) {
         console.log("📡 Conectando a RabbitMQ para enviar evento de usuario...");
     
         const connection = await amqp.connect({
-            protocol: 'amqp',
+            protocol: 'amqps',
             hostname: process.env.RABBIT_HOST || 'cow.rmq2.cloudamqp.com',
             port: 5672,
             username: process.env.RABBIT_USER || 'afykxbop',
