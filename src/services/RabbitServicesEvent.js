@@ -14,13 +14,14 @@ const QUEUE_NAME = "user_client_queue";
 export async function userCreatedEvent(user) {
     try {
         console.log("📡 Conectando a RabbitMQ para enviar evento de usuario...");
-
+    
         const connection = await amqp.connect({
             protocol: 'amqp',
-            hostname: process.env.RABBIT_HOST || 'rabbitmq',
+            hostname: process.env.RABBIT_HOST || 'cow.rmq2.cloudamqp.com',
             port: 5672,
-            username: process.env.RABBIT_USER || 'admin',
-            password: process.env.RABBIT_PASS || 'admin'
+            username: process.env.RABBIT_USER || 'afykxbop',
+            password: process.env.RABBIT_PASS || 'UJYvD_tYSwIjVXK53WbvGxQRxPbq-WKw',
+            vhost: process.env.RABBIT_VHOST || 'afykxbop'
         });
 
         const channel = await connection.createChannel();
