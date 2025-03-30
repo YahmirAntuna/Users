@@ -18,7 +18,7 @@ export async function userCreatedEvent(user) {
         const connection = await amqp.connect({
             protocol: 'amqps',
             hostname: process.env.RABBIT_HOST || 'cow.rmq2.cloudamqp.com',
-            port: 5672,
+            port: 5671,
             username: process.env.RABBIT_USER || 'afykxbop',
             password: process.env.RABBIT_PASS || 'UJYvD_tYSwIjVXK53WbvGxQRxPbq-WKw',
             vhost: process.env.RABBIT_VHOST || 'afykxbop'
