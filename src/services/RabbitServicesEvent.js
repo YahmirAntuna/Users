@@ -15,14 +15,7 @@ export async function userCreatedEvent(user) {
     try {
         console.log("📡 Conectando a RabbitMQ para enviar evento de usuario...");
     
-        const connection = await amqp.connect({
-            protocol: 'amqps',
-            hostname: process.env.RABBIT_HOST || 'cow.rmq2.cloudamqp.com',
-            port: 5671,
-            username: process.env.RABBIT_USER || 'afykxbop',
-            password: process.env.RABBIT_PASS || 'UJYvD_tYSwIjVXK53WbvGxQRxPbq-WKw',
-            vhost: process.env.RABBIT_VHOST || 'afykxbop'
-        });
+        const connection = await amqp.connect("amqps://sfnbytcx:mReKqVp2EW9xO1iebiuIpNayQzc-ZTfj@albatross.rmq.cloudamqp.com/sfnbytcx");
 
         const channel = await connection.createChannel();
         await channel.assertExchange(RABBIT_EXCHANGE, "topic", { durable: true });
